@@ -1,6 +1,5 @@
 package Bridgelabzs;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,19 +22,15 @@ public class regexUserRegistration {
         System.out.println("-------------------------------------------------------------------------------------");
     }
 
-
     public static void main(String[] args) {
-
 
         String firstNameRegExpPattern = "^[A-Z][a-z]{2,}";
         String[] firstNameList= {"Shubham", "Sh", "shubham", "Boo"};
         testIfValidOutput(firstNameRegExpPattern, firstNameList, "First Name Validation");
 
-
         String lastNameRegExpPattern = "^[A-Z][a-z]{2,}";
         String[] lastNameList= {"Phoujdar", "Ph", "phoujdar", "Hoo"};
         testIfValidOutput(lastNameRegExpPattern, lastNameList, "Last Name Validation");
-
 
         String emailRegExpPattern = "^([A-Za-z0-9]+[\\.\\+-]?[A-Za-z0-9]+)+[\\@][a-zA-Z]+[\\.][a-zA-Z]{2,3}[\\.]?[a-zA-Z]{0,2}";
         String[] emailList= {"emailabc@yahoo.com" ,"abc-100@yahoo.com" ,"abc.100@yahoo.com", "abc111@abc.com",
@@ -45,11 +40,9 @@ public class regexUserRegistration {
                 "abc.@gmail.com", "abc@abc@gmail.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au"};
         testIfValidOutput(emailRegExpPattern, emailList, "Email Address Validation");
 
-
         String mobileNumberRegExpPattern = "^[0-9]{2}[\\ ][0-9]{10}";
         String[] mobileNumberList= {"9822056132", "+919822056132", "91 9822056132", "+91 9822056132"};
         testIfValidOutput(mobileNumberRegExpPattern, mobileNumberList, "Mobile Number Validation");
-
 
         String passwordRegExpPattern = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
         String[] passwordList= {"adwssdfrgsadw", "asdu2@q4515", "asd2@qU", "asdU2@q", "asdU2@qqq", "asdU2@@qqq", "asdU2@qq#"};
