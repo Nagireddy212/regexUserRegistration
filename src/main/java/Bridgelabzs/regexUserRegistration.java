@@ -20,14 +20,14 @@ public class regexUserRegistration {
         return matcher.matches();
     }
 
-    public static void main(String[] args) {
 
-        String mobileNumberRegExpPattern = "^[0-9]{2}[\\ ][0-9]{10}";
-        String mobileNumberString = getUserInput(scanner, "Please Enter Valid Mobile Number:");
-        if(validatePattern(mobileNumberString, mobileNumberRegExpPattern)){
-            System.out.println("Mobile Number String is Valid.");
+    public static void main(String[] args) {
+        String passwordRegExpPattern = "^[a-zA-Z0-9\\.\\+\\*\\$\\^\\(\\)\\-#%&!]{8,}";
+        String passwordString = getUserInput(scanner, "Please Enter Valid Password:");
+        if(validatePattern(passwordString, passwordRegExpPattern)){
+            System.out.println("Password String is Valid.");
         }else
-            System.out.println("Mobile Number String is invalid.");
+            System.out.println("Password String is invalid.");
     }
 
 }
