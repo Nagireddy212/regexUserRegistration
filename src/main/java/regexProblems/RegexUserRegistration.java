@@ -9,13 +9,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexUserRegistration {
-
     public static final String firstNameRegExpPattern = "^[A-Z][a-z]{2,}$";
     public static final String lastNameRegExpPattern = "^[A-Z][a-z]{2,}$";
     public static final String emailRegExpPattern = "^([A-Za-z0-9]+[.+-]?[A-Za-z0-9]+)+[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}[.]?[a-zA-Z]{0,3}";
     public static final String mobileNumberRegExpPattern = "^[0-9]{2}[\\ ][0-9]{10}";
     public static final String passwordRegExpPattern = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
-
     public static final String[] firstNameList= {"Shubham","Sh", "shubham", "Boo888", null, ""};
     public static final String[] lastNameList= {"Phoujdar", "Ph", "phoujdar", "Hoo"};
     public static final String[] emailList= { null, "abc@yahoo.com" ,"abc-100@yahoo.com" ,"abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net",
@@ -63,3 +61,4 @@ public class RegexUserRegistration {
 
 
 }
+
