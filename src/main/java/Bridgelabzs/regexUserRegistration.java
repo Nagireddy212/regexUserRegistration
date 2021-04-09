@@ -22,12 +22,19 @@ public class regexUserRegistration {
 
 
     public static void main(String[] args) {
-        String passwordRegExpPattern = "^[a-zA-Z0-9\\.\\+\\*\\$\\^\\(\\)\\-#%&!]{8,}";
-        String passwordString = getUserInput(scanner, "Please Enter Valid Password:");
-        if(validatePattern(passwordString, passwordRegExpPattern)){
-            System.out.println("Password String is Valid.");
-        }else
-            System.out.println("Password String is invalid.");
+        String passwordRegExpPattern = "^(?=.*[A-Z]).{8,}$";
+        String[] passwordList= {"adwssdfrgsadw", "asdu2@q4515", "asd2@qU", "asdU2@q", "asdU2@qqq"};
+
+
+        for (int i = 0; i< passwordList.length; i++) {
+            String passwordString = passwordList[i];
+            if (validatePattern(passwordString, passwordRegExpPattern)) {
+                System.out.printf("Valid : %s\n",passwordList[i]);
+            } else
+                System.out.printf("Invalid : %s\n",passwordList[i]);
+        }
+
     }
+
 
 }
