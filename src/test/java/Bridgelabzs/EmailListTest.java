@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
+import regexProblems.RegexUserRegistration;
+import regexProblemsExceptions.RegexUserRegistrationException;
 
 import java.util.Arrays;
 import java.util.List;
@@ -52,7 +53,12 @@ public class EmailListTest {
 
     @Test
     public void testEmailList() {
-        boolean result = new RegexUserRegistration().validatePattern(argument, RegexUserRegistration.emailRegExpPattern);
+        boolean result = false;
+        try {
+            result = new RegexUserRegistration().validatePattern(argument, RegexUserRegistration.emailRegExpPattern);
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
         Assertions.assertEquals(result, expectedValidation);
     }
 }

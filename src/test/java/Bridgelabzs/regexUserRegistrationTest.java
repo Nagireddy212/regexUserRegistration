@@ -2,57 +2,120 @@ package Bridgelabzs;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import regexProblems.RegexUserRegistration;
+import regexProblemsExceptions.RegexUserRegistrationException;
 
 public class regexUserRegistrationTest {
     @Test
+    public void givenString_WhenNull_ShouldReturnFalse(){
+        String testString = null;
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.firstNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    public void givenString_WhenEmpty_ShouldReturnFalse(){
+        String testString = "";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.firstNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void givenFirstName_WhenValid_ShouldReturnTrue(){
-        String firstName = "Shubham";
-        Assertions.assertTrue(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.firstNameRegExpPattern));
+        String testString = "Shubham";
+        try {
+            Assertions.assertTrue(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.firstNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenFirstName_WhenInvalid_ShouldReturnFalse(){
-        String firstName = "Sh";
-        Assertions.assertFalse(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.firstNameRegExpPattern));
+        String testString = "Sh";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.firstNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenLastName_WhenValid_ShouldReturnTrue(){
-        String firstName = "Phoujdar";
-        Assertions.assertTrue(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.lastNameRegExpPattern));
+        String testString = "Phoujdar";
+        try {
+            Assertions.assertTrue(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.lastNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenLastName_WhenInvalid_ShouldReturnFalse(){
-        String firstName = "ph";
-        Assertions.assertFalse(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.lastNameRegExpPattern));
+        String testString = "ph";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.lastNameRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenEmail_WhenValid_ShouldReturnTrue(){
-        String firstName = "a.b1.00@abc.net";
-        Assertions.assertTrue(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.emailRegExpPattern));
+        String testString = "a.b1.00@abc.net";
+        try {
+            Assertions.assertTrue(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.emailRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenEmail_WhenInvalid_ShouldReturnFalse(){
-        String firstName = "abc";
-        Assertions.assertFalse(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.emailRegExpPattern));
+        String testString = "abc";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.emailRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenMobileNumber_WhenValid_ShouldReturnTrue(){
-        String firstName = "91 9822056132";
-        Assertions.assertTrue(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.mobileNumberRegExpPattern));
+        String testString = "91 9822056132";
+        try {
+            Assertions.assertTrue(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.mobileNumberRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenMobileNumber_WhenInvalid_ShouldReturnFalse(){
-        String firstName = "+919822056132";
-        Assertions.assertFalse(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.mobileNumberRegExpPattern));
+        String testString = "+919822056132";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.mobileNumberRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenPassword_WhenValid_ShouldReturnTrue(){
-        String firstName = "asdU2@q4515";
-        Assertions.assertTrue(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.passwordRegExpPattern));
+        String testString = "asdU2@q4515";
+        try {
+            Assertions.assertTrue(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.passwordRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     public void givenPassword_WhenInvalid_ShouldReturnFalse(){
-        String firstName = "adwssdfrgsadw";
-        Assertions.assertFalse(RegexUserRegistration.validatePattern(firstName, RegexUserRegistration.passwordRegExpPattern));
+        String testString = "adwssdfrgsadw";
+        try {
+            Assertions.assertFalse(RegexUserRegistration.validatePattern(testString, RegexUserRegistration.passwordRegExpPattern));
+        } catch (RegexUserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
+
 
 }
